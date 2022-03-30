@@ -3,12 +3,12 @@ new-module -name install_agent -scriptblock {
     $OldBaseInstallPath = "$($env:SYSTEMDRIVE)\ProgramData\osquery"
     $SysmonSrc = "https://download.sysinternals.com/files/Sysmon.zip"
     $SysmonDst = "$($env:TEMP)\Sysmon.zip"
-    $SysmonConfigSrc = "https://github.com/nfos3c/AlienVault-Agent/blob/main/20.08.0003.0301/alienvault-agent-20.08.0003.0301.msi"
+    $SysmonConfigSrc = "https://raw.githubusercontent.com/nfos3c/AlienVault-Agent/main/20.08.0003.0301/sysmon_config_schema4_0.xml"
     $SysmonConfigDst = [System.IO.Path]::GetTempFileName()
     $SysmonInstallDst = "$($env:USERPROFILE)\Documents\Sysmon\"
     $SysmonWinDst = "$($env:WINDIR)\Sysmon.exe"
     $SysmonServiceName = "Sysmon"
-    $OsquerySrc = "https://github.com/nfos3c/AlienVault-Agent/blob/main/20.08.0003.0301/alienvault-agent-20.08.0003.0301.msi"
+    $OsquerySrc = "https://github.com/nfos3c/AlienVault-Agent/blob/main/20.08.0003.0301/alienvault-agent-20.08.0003.0301.msi?raw=true"
     $OsqueryDst = "$env:TEMP\alienvault-agent.msi"
     [bool] $IsSysmonDownloaded = $false
     [bool] $IsSysmonConfigDownloaded = $false
